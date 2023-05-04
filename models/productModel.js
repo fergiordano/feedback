@@ -1,18 +1,19 @@
+
 const mongoose = require('mongoose');
 const { Schema } = require('mongoose');
 
 //configuramos con Schema nuestra collección de db
-const userSchema = new Schema({
+const productSchema = new Schema({
     nombre: {
         type: String,
         required: true
     },
-    email: { 
-        type: String, 
+    precio: { 
+        type: Number, 
         required: true,
     },
-    password: {
-        type: String, 
+    stock: {
+        type: Number, 
         required: true
     },
     timestamp: {
@@ -22,4 +23,4 @@ const userSchema = new Schema({
 });
 
 //exportamos la configuración con el nombre de la colección
-module.exports = mongoose.model('Usuarios', userSchema);
+module.exports = mongoose.model('Producto', productSchema);
